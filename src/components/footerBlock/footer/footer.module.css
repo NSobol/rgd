@@ -1,0 +1,28 @@
+.footer{
+    background: #2D2B2F;
+    height: 96px;
+    border-top: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-link{
+    width: 36px;
+    height: 36px; 
+}
+
+.icon{
+    width: 36px;
+height: 36px;
+fill: #E5E5E5;
+}
+
+.footer p {
+    color: #E5E5E5;
+font-size: 24px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}

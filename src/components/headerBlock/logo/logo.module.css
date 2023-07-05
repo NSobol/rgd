@@ -1,0 +1,13 @@
+.logo{
+    display: flex;
+    width: 104px;
+    height: 49px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #E5E5E5;
+font-size: 36px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}

@@ -1,0 +1,44 @@
+.title{
+    color: #292929;
+font-size: 36px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+text-align: left;
+}
+
+.content{
+display: flex;
+}
+
+.container{
+    display: flex;
+    width: 1320px;
+    height: 258px;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.content::before{
+    content:'';
+    width: 9px;
+height: 231px;
+flex-shrink: 0;
+background: #FFA800;
+margin-right: 19px;
+}
+
+.content-paragraph{
+    color: #292929;
+font-size: 24px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: left;
+padding: 0;
+margin: 0;
+}

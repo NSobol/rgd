@@ -1,0 +1,9 @@
+.container{
+    height: 575px;
+flex-shrink: 0;
+background-image: url('./../../../Images/works.png');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
