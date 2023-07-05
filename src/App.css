@@ -1,8 +1,22 @@
-ul{
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Regular.woff) format('woff'),
+    url(./fonts/Roboto-Regular.woff2) format('woff2'),
+    url(./fonts/Roboto-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
   list-style-type: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }

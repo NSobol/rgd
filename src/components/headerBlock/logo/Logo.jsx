@@ -4,7 +4,7 @@ import s from './logo.module.css';
 export const Logo = () => {
     return (
         <div>
-            <a href="!/" className={s.logo}>Logo</a>
+            <a href="!/" className={s.logo}>Лого</a>
         </div>
     )
 }
