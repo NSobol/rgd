@@ -1,7 +1,7 @@
 import React from 'react';
-import Monitor from './../../../Images/monitor.png';
-import Office from './../../../Images/Subtract.png';
-import Globus from './../../../Images/globus.png';
+import Monitor from './../../../images/monitor.png';
+import Office from './../../../images/Subtract.png';
+import Globus from './../../../images/globus.png';
 import s from './howItWorks.module.css';
 import { Link } from 'react-router-dom';
 

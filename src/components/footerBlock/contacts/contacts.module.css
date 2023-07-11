@@ -115,6 +115,17 @@
   text-transform: uppercase;
 }
 
+.contacts-subscribe > button:hover {
+  color: #2D2B2F;
+  background-color: #ffca62;
+  border: 1px solid #ffca62;
+}
+
+.contacts-subscribe > button:active {
+  color: #2D2B2F;
+  background-color: #FFF;
+  border: 1px solid #FFF;
+}
 .contacts-content-right-subscribe {
   color: #fff;
   font-family: Roboto;
@@ -136,13 +147,17 @@
   display: inline-block;
   height: 30px;
 }
-.contacts-socials-image {
-  fill: #E5E5E5;
-  stroke: #E5E5E5;
-  z-index: 10;
+.contact-image {
+  fill: #e5e5e5;
+  stroke: #e5e5e5;
 }
 
-.contacts-socials-link:hover > .contacts-socials-image:hover {
+.contact-image:hover {
+  fill: #ffa800;
+  stroke: #ffa800;
+}
+
+.contact-image:active {
   fill: #ffa800;
   stroke: #ffa800;
 }

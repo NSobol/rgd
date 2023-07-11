@@ -1,7 +1,7 @@
 import React from 'react';
 import { Logo } from './../logoFooter/Logo';
 import { HashLink } from 'react-router-hash-link';
-import LinkIcon from './../../../Images/button.svg';
+import LinkIcon from './../../../images/button.svg';
 import s from './footer.module.css';
 
 export const Footer = () => {

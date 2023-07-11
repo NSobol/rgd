@@ -1,6 +1,6 @@
 .howItWorks {
   height: 575px;
-  background-image: url('./../../../Images/works.png');
+  background-image: url('./../../../images/works.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -43,6 +43,18 @@
   line-height: normal;
   padding-bottom: 15px;
   padding-top: 14px;
+}
+
+.header-link:hover {
+  background: #ffca62;
+  border: 1px solid #ffca62;
+  color: #2d2b2f;
+}
+
+.header-link:active {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #2d2b2f;
 }
 
 .advantages {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import s from './reviews.module.css';
-import Girl from './../../../Images/girl.png';
-import Man from './../../../Images/man.png';
+import Girl from './../../../images/girl.png';
+import Man from './../../../images/man.png';
 
 export const Reviews = () => {
   const [currentSlide] = useState(0);

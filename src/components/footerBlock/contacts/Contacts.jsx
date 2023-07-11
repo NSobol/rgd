@@ -1,8 +1,13 @@
 import React from 'react';
-import Phone from './../../../Images/phone.svg';
-import Mail from './../../../Images/email.svg';
-import Skype from './../../../Images/skype.svg';
-import Metka from './../../../Images/metka.svg';
+import Phone from './../../../images/phone.svg';
+import Mail from './../../../images/email.svg';
+import Skype from './../../../images/skype.svg';
+import Metka from './../../../images/metka.svg';
+import { ReactComponent as Youtube } from './../../../images/youtube.svg';
+import { ReactComponent as Linkedin } from './../../../images/linkedin.svg';
+import { ReactComponent as Google } from './../../../images/google.svg';
+import { ReactComponent as Facebook } from './../../../images/facebook.svg';
+import { ReactComponent as Twitter } from './../../../images/twitter.svg';
 import s from './contacts.module.css';
 
 export const Contacts = () => {
@@ -50,7 +55,7 @@ export const Contacts = () => {
                 href='!'
                 className={s['contacts-socials-link contacts-socials-youtube']}
               >
-                <span className={s['hidden']}>youtube</span>
+                <Youtube className={s['contact-image']} />
               </a>
             </li>
             <li>
@@ -58,7 +63,7 @@ export const Contacts = () => {
                 href='!'
                 className={s['contacts-socials-link contacts-socials-linkedin']}
               >
-                <span className={s['hidden']}>linkedin</span>
+                <Linkedin className={s['contact-image']} />
               </a>
             </li>
             <li>
@@ -66,7 +71,7 @@ export const Contacts = () => {
                 href='!'
                 className={s['contacts-socials-link contacts-socials-google']}
               >
-                <span className={s['hidden']}>linkedin</span>
+                <Google className={s['contact-image']} />
               </a>
             </li>
             <li>
@@ -74,7 +79,7 @@ export const Contacts = () => {
                 href='!'
                 className={s['contacts-socials-link contacts-socials-facebook']}
               >
-                <span className={s['hidden']}>facebook</span>
+                <Facebook className={s['contact-image']} />
               </a>
             </li>
             <li>
@@ -82,7 +87,7 @@ export const Contacts = () => {
                 href='!'
                 className={s['contacts-socials-link contacts-socials-twitter']}
               >
-                <span className={s['hidden']}>twitter</span>
+                <Twitter className={s['contact-image']} />
               </a>
             </li>
           </ul>
@@ -91,3 +96,5 @@ export const Contacts = () => {
     </section>
   );
 };
+
+
