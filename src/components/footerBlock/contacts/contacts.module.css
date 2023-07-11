@@ -33,6 +33,7 @@
   display: flex;
   margin-bottom: 27px;
   align-items: center;
+  cursor: pointer;
 }
 
 .contacts-content-left-group:last-child {
