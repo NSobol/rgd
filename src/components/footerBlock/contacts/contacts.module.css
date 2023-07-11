@@ -1,0 +1,148 @@
+.contacts {
+  width: 100%;
+  height: 423px;
+  background-color: #2d2b2f;
+  padding-top: 49px;
+}
+.contacts-content {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 100px;
+}
+
+.contacts-content-left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 320px;
+}
+
+.contacts-content-left h3 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 31px;
+}
+
+.contacts-content-left-group {
+  display: flex;
+  margin-bottom: 27px;
+  align-items: center;
+}
+
+.contacts-content-left-group:last-child {
+  align-items: flex-start;
+}
+
+.group-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 36px;
+}
+
+.group-text {
+  color: #e5e5e5;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contacts-content-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-content-right h3 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 28px;
+}
+
+.contacts-content-right-subtitle {
+  color: #e5e5e5;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.contacts-subscribe {
+  height: 60px;
+  display: flex;
+}
+
+.contacts-subscribe > input {
+  width: 447px;
+  height: 60px;
+  border-radius: 3px;
+  background: #fff;
+  padding: 17px 351px 17px 21px;
+  color: #e5e5e5;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  outline: none;
+}
+
+.contacts-subscribe > button {
+  width: 169px;
+  height: 60px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  margin-left: 33px;
+  color: #e5e5e5;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.contacts-content-right-subscribe {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 28px;
+  margin-top: 44px;
+}
+
+.contacts-socials {
+  display: flex;
+  width: 360px;
+  justify-content: space-between;
+}
+
+.contacts-socials-link {
+  display: inline-block;
+  height: 30px;
+}
+.contacts-socials-image {
+  fill: #E5E5E5;
+  stroke: #E5E5E5;
+  z-index: 10;
+}
+
+.contacts-socials-link:hover > .contacts-socials-image:hover {
+  fill: #ffa800;
+  stroke: #ffa800;
+}

@@ -1,15 +1,9 @@
 import React from 'react';
-import { FooterContainer } from './components/footerBlock/footerContainer/FooterContainer';
-import { Header } from './components/headerBlock/header/Header';
-import {MainContent} from './components/main/mainContent/MainContent'
 import './App.css';
+import { MainPage } from './pages/mainPage/MainPage';
 
 function App() {
-  return <div className='App'>
-    <Header />
-  <MainContent />
-  <FooterContainer />
-  </div>;
+  return <div className='App'><MainPage /></div>;
 }
 
 export default App;
