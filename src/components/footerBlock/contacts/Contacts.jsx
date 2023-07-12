@@ -9,8 +9,22 @@ import { ReactComponent as Google } from './../../../images/google.svg';
 import { ReactComponent as Facebook } from './../../../images/facebook.svg';
 import { ReactComponent as Twitter } from './../../../images/twitter.svg';
 import s from './contacts.module.css';
+import { useForm } from 'react-hook-form';
+import { api } from '../../../utils/api';
 
 export const Contacts = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data.email);
+    try {
+      const res = await api.getSubscribe(data.email);
+      console.log(res);
+      // alert("Вы успешно подписаны");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <section id='contacts' className={s.contacts}>
       <div className={s['contacts-content']}>
@@ -42,8 +56,17 @@ export const Contacts = () => {
           <p className={s['contacts-content-right-subtitle']}>
             Будьте в курсе событий
           </p>
-          <form className={s['contacts-subscribe']}>
-            <input type='email' placeholder='email' />
+          <form
+            className={s['contacts-subscribe']}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <input
+              type='email'
+              placeholder='email'
+              name='email'
+              required
+              {...register('email')}
+            />
             <button type='submit'>отправить</button>
           </form>
           <p className={s['contacts-content-right-subscribe']}>
@@ -96,5 +119,3 @@ export const Contacts = () => {
     </section>
   );
 };
-
-
