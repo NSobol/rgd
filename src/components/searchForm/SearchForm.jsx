@@ -2,12 +2,19 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import s from './seachForm.module.css';
 import Change from './../../images/change.svg';
+import { useNavigate } from 'react-router-dom';
 
 export const SearchForm = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
+  const onSubmit = () => {
+    navigate('/loading');
+  };
+
   return (
     <div className={s.formContainer}>
-      <form className={s.form}>
+      <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={s['form-group']}>
           <p>Направление</p>
           <div className={s['form-group-inputs']}>
