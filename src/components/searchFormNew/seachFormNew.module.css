@@ -1,5 +1,5 @@
 .formContainer {
-  background: rgba(41, 41, 41, 0.69);;
+  background: rgba(41, 41, 41, 0.69);
   width: 1490px;
   height: 285px;
   margin-top: 111px;
@@ -8,7 +8,7 @@
 }
 
 .form {
-  padding: 28px 24px 37px 21px;
+  padding: 28px 42px 37px 44px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -38,33 +38,44 @@
   height: 60px;
   border-radius: 3px;
   background: #fff;
-  color: #e5e5e5;
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding-left: 21px;
-  padding-top: 19px;
+  padding-top: 11px;
   padding-bottom: 11px;
-  text-transform: uppercase;
   outline: none;
 }
 
 .form-group-icon {
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.form-group-input {
+  color: #e5e5e5;
+  text-transform: capitalize;
+}
+
+.form-group-input-date {
+  color: #e5e5e5;
+  background-color: #fff;
+  text-transform: uppercase;
 }
 
 .form-group-inputs-date {
   display: flex;
   justify-content: space-between;
+  gap: 35px;
 }
+
 .form-button {
   width: 323px;
   height: 60px;
   border-radius: 5px;
-  background: rgba(41, 41, 41, 0.69);;
+  background: transparent;
   color: #ffa800;
   text-align: center;
   font-family: Roboto;
@@ -75,4 +86,13 @@
   text-transform: uppercase;
   border-color: #ffa800;
   margin-left: auto;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+  width: 30px;
+  height: 30px;
+	opacity: 0;
+}
+input[type=date]{
+	background:url("./../../images/calendar.svg") #fff no-repeat 98% 50%;
 }

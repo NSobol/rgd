@@ -50,6 +50,16 @@
   margin-left: 5px;
 }
 
+.form-group-input {
+  color: #e5e5e5;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
 .form-group-inputs-date {
   display: flex;
   justify-content: space-between;
@@ -70,4 +80,12 @@
   border-color: #ffa800;
   margin-top: 32px;
   margin-left: auto;
+}
+input[type=date]::-webkit-calendar-picker-indicator{
+  width: 30px;
+  height: 30px;
+	opacity: 0;
+}
+input[type=date]{
+	background:url("./../../images/calendar.svg") #fff no-repeat 98% 50%;
 }

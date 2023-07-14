@@ -14,19 +14,28 @@ export const SearchFormNew = () => {
           <div className={s['form-group']}>
             <p>Направление</p>
             <div className={s['form-group-inputs']}>
-              <input type='text' />
+              <input
+                type='text'
+                placeholder='Откуда'
+                className={s['form-group-input']}
+              />
               <img
                 src={Change}
                 alt='Поменять местами'
                 className={s['form-group-icon']}
               />
-              <input type='text' />
+              <input
+                type='text'
+                placeholder='Куда'
+                className={s['form-group-input']}
+              />
             </div>
           </div>
           <div className={s['form-group']}>
             <p>Дата</p>
             <div className={s['form-group-inputs-date']}>
-              <input type='date' /> <input type='date' />
+              <input type='date' className={s['form-group-input-date']} />
+              <input type='date' className={s['form-group-input-date']} />
             </div>
           </div>
         </div>
