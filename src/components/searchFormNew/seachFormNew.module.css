@@ -88,11 +88,19 @@
   margin-left: auto;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator{
+input[type='date']::-webkit-calendar-picker-indicator {
   width: 30px;
   height: 30px;
-	opacity: 0;
+  opacity: 0;
 }
-input[type=date]{
-	background:url("./../../images/calendar.svg") #fff no-repeat 98% 50%;
+input[type='date'] {
+  background: url('./../../images/calendar.svg') #fff no-repeat 98% 50%;
 }
+
+input[type='date']::-webkit-calendar-picker-selected {
+color: red;
+}
+
+
+
+/* .react-datepicker__day--selected */

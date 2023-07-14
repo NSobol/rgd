@@ -1,5 +1,5 @@
 const baseData = {
-  baseUrl: 'https://netology-trainbooking.netoservices.ru',
+  baseUrl: 'https://students.netoservices.ru/fe-diplom',
   headers: {
     'Content-Type': 'application/json',
   },
