@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import s from './Rating.module.css';
-import { ReactComponent as Star } from './../../../images/Star.svg';
+import s from './formRating.module.css';
+import { ReactComponent as Star } from './../../images/Star.svg';
 
 const stars = Array(5).fill(0);
 export const FormRating = ({ rate, setRate }) => {

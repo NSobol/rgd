@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { MainPage } from './pages/mainPage/MainPage';
 import { LoadingSearchPage } from './pages/loadingSearchPage/LoadingSearchPage';
+import { SuccessfulOrderPage } from './pages/successfulOrderPage/SuccessfulOrderPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/loading' element={<LoadingSearchPage />} />
+        <Route path='/fulorder' element={<SuccessfulOrderPage />} />
       </Routes>
     </div>
   );

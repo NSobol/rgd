@@ -18,7 +18,9 @@ export const Modal = ({ active, setActive, messages, type = 'info' }) => {
             </div>
           )}
         </div>
-        <div className='content'></div>
+        <div className='content'>
+          {messages}
+        </div>
         <button className='modal__close' onClick={() => setActive(false)}>
           Понятно
         </button>
