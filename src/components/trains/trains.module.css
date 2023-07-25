@@ -1,0 +1,13 @@
+.trains {
+  display: flex;
+  flex-direction: column;
+}
+.trains-content {
+  display: flex;
+  flex-direction: row;
+  width: 1480px;
+  height: calc(100% - 554px - 521px);
+  justify-content: space-between;
+  margin: 0 auto 30px;
+   padding-top: 96px;
+}
