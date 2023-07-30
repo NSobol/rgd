@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCoach } from '../../storage/slices/trainSlice';
 import { RouteDetails } from '../../components/routeDetails/routeDetails';
 import { TicketsQuantity } from '../../components/ticketsQuantity/ticketsQuantity';
-import { Header } from '../../components/headerBlock/header/Header';
-import { FooterContainer } from '../../components/footerBlock/footerContainer/FooterContainer';
 import s from './tickets.module.css';
 import { Crumbs } from '../../components/crumbs/Crumbs';
 import { CoachTypeSelect } from '../../components/coachTypeSelect/coachTypeSelect';
@@ -35,7 +33,6 @@ export const TicketsPage = () => {
 
   return (
     <div>
-      <Header />
       <Crumbs progress={2} />
       <div className={s.container}>
         <DetailsFilter />
@@ -75,10 +72,9 @@ export const TicketsPage = () => {
                 <p>{coach.class_type}</p>
               </div>
             ))}
-          <button onClick={getTransition}>Далее</button>
+          <button className={s['ticketsFull-button'] } onClick={getTransition}>Далее</button>
         </div>
       </div>
-      <FooterContainer />
     </div>
   );
 };

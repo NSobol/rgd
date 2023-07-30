@@ -9,3 +9,112 @@
   max-height: 9999px;
   transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
+
+.accordionItem {
+  width: 960px;
+  height: fit-content;
+  border: 1px solid #c4c4c4;
+  background: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 44px;
+}
+
+.accordionTitle {
+  width: 960px;
+  height: 107px;
+  border: 1px solid #c4c4c4;
+  background: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  padding: 42px 45px 33px 25px;
+}
+
+.active {
+  width: 958px;
+  height: 107px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #928f94;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 42px 45px 33px 25px;
+}
+
+.container {
+  display: flex;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.title {
+  color: #292929;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 16px;
+}
+
+.selectAge {
+  margin-top: 38px;
+  margin-left: 36px;
+}
+
+.passenger-type {
+  padding-bottom: 64px;
+  padding-top: 55px;
+  padding-left: 35px;
+}
+
+.passenger-type-check {
+  width: 28px;
+  height: 28px;
+  margin-right: 20px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.passenger-type label {
+  color: #292929;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.passenger-type-check + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.passenger-type-check + label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.passenger-type-check:checked + label::before {
+  width: 28px;
+  height: 28px;
+  border-color: #ffa800;
+  background: #fff;
+  background-image: url('./../../images/check.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
