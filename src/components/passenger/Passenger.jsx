@@ -7,8 +7,11 @@ import { useForm } from 'react-hook-form';
 
 export const Passenger = ({ index }) => {
   const [opened, setOpened] = useState(false);
+  const [checked, setChecked] = useState(false);
   const isTitleActive = opened ? 'active' : 'accordionTitle';
   const isActive = opened ? 'content show' : 'content';
+  const isChecked = checked ? 'passenger-type-checked' : 'passenger-type-check';
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -25,7 +28,7 @@ export const Passenger = ({ index }) => {
         {opened && <Clouse onClick={() => setOpened(!opened)} />}
       </div>
       <div className={s[`${isActive}`]}>
-        <form id='formPassenger' onSubmit={handleSubmit(onSubmit)}>
+        <div id='formPassenger' onSubmit={handleSubmit(onSubmit)}>
           <div>
             <select name='' id='' className={s.selectAge}>
               <option value='Взрослый'>Взрослый</option>
@@ -80,6 +83,23 @@ export const Passenger = ({ index }) => {
               />
             </div>
 
+            <div class={s['form_toggle']}>
+              <div class={s['form_toggle-item-1']}>
+                <input
+                  id='fid-1'
+                  type='radio'
+                  name='radio'
+                  value='off'
+                  checked
+                />
+                <label for='fid-1'>М</label>
+              </div>
+              <div class={s['form_toggle-item-2']}>
+                <input id='fid-2' type='radio' name='radio' value='on' />
+                <label for='fid-2'>Ж</label>
+              </div>
+            </div>
+
             <div className={s['personal-form-group-item']}>
               <label
                 htmlFor='dateBirthday'
@@ -88,23 +108,25 @@ export const Passenger = ({ index }) => {
                 Дата рождения
               </label>
               <input
-                type='date'
+                type='text'
                 name='birthday'
                 id='dateBirthday'
                 required
                 className={s['personal-form-group-item-input']}
+                placeholder='ДД/ММ/ГГ'
                 {...register('birthday')}
               />
             </div>
 
-            <div className={s['passenger-type']}>
+            <div className={s['passenger-type']} onChange={() => setChecked(!checked)}>
               <input
-                className={s['passenger-type-check']}
+                className={s[`${isChecked}`]}
                 type='checkbox'
                 name='limited_mobility'
                 id='limited_mobility'
                 value='Ограниченная подвижность'
-                {...register('limited_mobility')}
+                // {...register('limited_mobility')}
+                checked={checked}
               />
               <label
                 htmlFor='limited_mobility'
@@ -114,7 +136,7 @@ export const Passenger = ({ index }) => {
               </label>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
