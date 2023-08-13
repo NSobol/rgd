@@ -38,12 +38,22 @@ const initialState = {
     sort: 'date',
   },
   currentRoute: {},
-  departureCoach: [],
+  departureCoaches: [],
   departureCoachType: '',
-  departureFilteredCoach: [],
-  arrivalCoach: [],
+  departureFilteredCoaches: [],
+  departureSelectedCoaches: [],
+  departure: {
+    route_direction_id: '',
+    seats: [],
+  },
+  arrivalCoaches: [],
   arrivalCoachType: '',
-  arrivalFilteredCoach: [],
+  arrivalFilteredCoaches: [],
+  arrivalSelectedCoaches: [],
+  arrival: {
+    route_direction_id: '',
+    seats: [],
+  },
 };
 
 // actions ----------------------------------------------------
@@ -71,12 +81,12 @@ export const getCoach = createAsyncThunk(
   async function (currentRoute, { fulfillWithValue, rejectWithValue }) {
     try {
       if (currentRoute.arrival) {
-        const departureCoach = await api.getRouteSeats(currentRoute.departure._id);
-        const arrivalCoach = await api.getRouteSeats(currentRoute.arrival._id);
-        return fulfillWithValue({ departureCoach, arrivalCoach });
+        const departureCoaches = await api.getRouteSeats(currentRoute.departure._id);
+        const arrivalCoaches = await api.getRouteSeats(currentRoute.arrival._id);
+        return fulfillWithValue({ departureCoaches, arrivalCoaches });
       }
-      const departureCoach = await api.getRouteSeats(currentRoute.departure._id);
-      return fulfillWithValue({ departureCoach });
+      const departureCoaches = await api.getRouteSeats(currentRoute.departure._id);
+      return fulfillWithValue({ departureCoaches });
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -101,20 +111,42 @@ const trains = createSlice({
       state.currentRoute = action.payload;
     },
     setCoachType(state, { payload }) {
+      state[`${payload.direction}SelectedCoaches`] = [];
       state[`${payload.direction}CoachType`] = payload.type;
-      state[`${payload.direction}FilteredCoach`] = state[`${payload.direction}Coach`].filter(
+      state[`${payload.direction}FilteredCoaches`] = state[`${payload.direction}Coaches`].filter(
         ({ coach }) => {
           return payload.type.includes(coach.class_type);
         }
       );
     },
+    setSelectedCoaches(state, { payload }) {
+      if (
+        state[`${payload.direction}SelectedCoaches`].find(
+          (el) => el?.coach?._id === payload.coach.coach._id
+        )
+      ) {
+        state[`${payload.direction}SelectedCoaches`] = state[`${payload.direction}SelectedCoaches`].filter((el) => el?.coach?._id !== payload.coach.coach._id);
+      } else {
+        state[`${payload.direction}SelectedCoaches`] = [...state[`${payload.direction}SelectedCoaches`], payload.coach];
+      }
+    },
+    setSelectedSeat(state, {payload}) {
+      if (state[payload.direction].seats.find(seat => seat.coach_id === payload.seat.coach_id && seat.seat_number === payload.seat.seat_number)) {
+        state[payload.direction].seats = state[payload.direction].seats.filter(seat => seat.seat_number !== payload.seat.seat_number || seat.coach_id !== payload.seat.coach_id)
+      } else {
+        state[payload.direction].seats.push(payload.seat)
+      }
+    },
+    resetSelectedSeats(state, {payload}){
+      state[payload.direction].seats = state[payload.direction].seats.filter(seat => seat.coach_id !== payload.coach_id)
+    },
     resetCoachType(state, action) {
-      state.departureCoach = [];
+      state.departureCoaches = [];
       state.departureCoachType = '';
-      state.departureFilteredCoach = [];
-      state.arrivalCoach = [];
+      state.departureFilteredCoaches = [];
+      state.arrivalCoaches = [];
       state.arrivalCoachType = '';
-      state.arrivalFilteredCoach = [];
+      state.arrivalFilteredCoaches = [];
     },
   },
   extraReducers: (builder) => {
@@ -124,8 +156,8 @@ const trains = createSlice({
     });
 
     builder.addCase(getCoach.fulfilled, (state, action) => {
-      state.departureCoach = action.payload.departureCoach;
-      state.arrivalCoach = action.payload.arrivalCoach ?? [];
+      state.departureCoaches = action.payload.departureCoaches;
+      state.arrivalCoaches = action.payload.arrivalCoaches ?? [];
     });
 
     builder.addMatcher(isError, (state, action) => {
@@ -139,6 +171,15 @@ const trains = createSlice({
   },
 });
 
-export const { setCity, setDate, setFilter, selectRoute, setCoachType, resetCoachType } =
-  trains.actions;
+export const {
+  setCity,
+  setDate,
+  setFilter,
+  selectRoute,
+  setCoachType,
+  resetCoachType,
+  setSelectedCoaches,
+  setSelectedSeat,
+  resetSelectedSeats,
+} = trains.actions;
 export default trains.reducer;
