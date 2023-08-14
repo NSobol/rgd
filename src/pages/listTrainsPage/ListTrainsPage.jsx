@@ -8,8 +8,8 @@ import s from './listTrainsPage.module.css';
 export const ListTrainsPage = () => {
   const { trains } = useSelector((s) => s.trains);
   const total = useSelector((s) => s.trains.total);
-  // const data = {
-  //   trains: [
+  const data = {
+    trains: [
   //     {
   //       have_first_class: false,
   //       have_second_class: false,
@@ -585,7 +585,7 @@ export const ListTrainsPage = () => {
   //         },
   //       },
   //     },
-  //   ],
+    ],
   //   loading: true,
   //   total: 6,
   //   searchParams: {
@@ -625,7 +625,7 @@ export const ListTrainsPage = () => {
   //   arrivalCoach: [],
   //   arrivalCoachType: '',
   //   arrivalFilteredCoach: [],
-  // };
+  };
 
   const trains1 = data.trains;
 
