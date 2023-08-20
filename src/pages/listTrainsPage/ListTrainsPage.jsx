@@ -7,8 +7,7 @@ import s from './listTrainsPage.module.css';
 import { NotFound } from '../../components/notfound/NotFound';
 
 export const ListTrainsPage = () => {
-  const { trains } = useSelector((s) => s.trains);
-  const total = useSelector((s) => s.trains.total);
+  const { trains, total } = useSelector((s) => s.trains);
   
   return (
     <div className={s['trains']}>

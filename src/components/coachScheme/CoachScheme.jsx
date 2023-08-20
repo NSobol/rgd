@@ -2,7 +2,7 @@ import React from 'react';
 import s from './coachScheme.module.css';
 import { Seat } from '../Seat/Seat';
 
-export const CoachScheme = ({ coach, setSeat }) => {
+export const CoachScheme = ({ coachInfo, seats, setSeats }) => {
   const fillSeatsArray = (seatsArray, size) => {
     const filledSeatsArray = [...seatsArray];
     for (let i = seatsArray.length; i < size; i++) {
@@ -11,35 +11,40 @@ export const CoachScheme = ({ coach, setSeat }) => {
     return filledSeatsArray;
   };
 
-  const createSeat = (coach) => {
+  const createSeat = (coachInfo) => {
     let filledSeatsArray = [];
-    switch (coach.coach.class_type) {
+    switch (coachInfo.coach.class_type) {
       case 'first':
-        filledSeatsArray = fillSeatsArray(coach.seats, 16);
+        filledSeatsArray = fillSeatsArray(coachInfo.seats, 16);
         break;
       case 'second':
-        filledSeatsArray = fillSeatsArray(coach.seats, 32);
+        filledSeatsArray = fillSeatsArray(coachInfo.seats, 32);
         break;
       case 'third':
-        filledSeatsArray = fillSeatsArray(coach.seats, 48);
+        filledSeatsArray = fillSeatsArray(coachInfo.seats, 48);
         break;
       case 'fourth':
-        filledSeatsArray = fillSeatsArray(coach.seats, 62);
+        filledSeatsArray = fillSeatsArray(coachInfo.seats, 62);
         break;
-
       default:
         console.error('Ошибка при отрисовке схемы рассадки пассажиров');
         break;
     }
     return filledSeatsArray.map((seat, i) => (
-      <Seat seat={seat} key={`${coach.coach.name}seat${i}`} setSeat={setSeat}/>
+      <Seat
+        seat={seat}
+        key={`${coachInfo.coach.name}seat${i}`}
+        seats={seats}
+        setSeats={setSeats}
+        coachInfo={coachInfo}
+      />
     ));
   };
 
   return (
     <div className={s['schemeContainer']}>
       <div className={s['gridWrapper']}>
-        <div className={s[`${coach.coach.class_type}ClassGrid`]}>{createSeat(coach)}</div>
+        <div className={s[`${coachInfo.coach.class_type}ClassGrid`]}>{createSeat(coachInfo)}</div>
       </div>
     </div>
   );
