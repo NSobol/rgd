@@ -1,3 +1,6 @@
+Дипломная работа "Сервис бронирования ж/д билетов на поезда дальнего следования".
+Проект развернут по адресу: https://rainbow-panda-77eaa6.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
